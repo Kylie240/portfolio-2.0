@@ -1,0 +1,22 @@
+<div id="projects" class="grid grid-nogutter w-full" style="padding-top: 120px; height: 100vh;">
+    <div class="w-full h-full flex justify-content-center align-items-center">
+        <div class="flex justify-content-center align-items-end" style="max-width: 1600px;">
+            <div>
+                <p class="text-lg text-center line-height-3">My portfolio</p>
+                <div class="text-7xl line-height-1 text-center">Check out my work</div>
+                <p class="text-lg text-center line-height-3">Explor a collection of some of my most recent projects, showcasing my expertise in front-end and knowledge of backend</p>
+                <div class="grid">
+                    @for (project of projects; track $index) {
+                        <p-card class="col-3" [style]="{ width: '25rem', overflow: 'hidden' }">
+                            <ng-template #header>
+                                <img alt="{{project.title}}" class="w-full" style="height: 200px;" src="{{project.image}}" />
+                            </ng-template>
+                            <ng-template #title> {{project.title}} </ng-template>
+                            <ng-template #subtitle> {{project.stack}} </ng-template>
+                        </p-card>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

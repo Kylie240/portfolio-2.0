@@ -1,0 +1,23 @@
+<div class="grid grid-nogutter w-full" style="padding-top: 80px; height: fit-content;">
+    <div class="w-full h-full flex flex-column justify-content-center align-items-center">
+        <div class="flex flex-column align-items-center">
+            <p class="text-3xl text-center font-bold line-height-3">Work Experience</p>
+            <div class="flex flex-column gap-3">
+                @for (item of experiences; track $index) {
+                    <div class="flex justify-content-center align-items-start gap-4">
+                        <p>{{item.date}}</p>
+                        <div class="flex flex-column justify-content-start align-items-start"  style="width: 500px;">
+                            <p class="font-bold p-0">{{item.title}}</p>
+                            @if(item?.link){
+                                <a href="{{item?.link}}" target="_blank">{{item.company}}</a>
+                            } @else {
+                                <p>{{item.company}}</p>
+                            }
+                            <p>{{item.description}}</p>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

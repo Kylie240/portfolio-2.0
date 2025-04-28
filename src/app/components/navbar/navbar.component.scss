@@ -1,0 +1,36 @@
+.navbar {
+    backdrop-filter: blur(14px) saturate(180%);
+    -webkit-backdrop-filter: blur(14px) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.42);
+}
+.blob {
+    width: 400px;
+    height: 200px;
+    background: linear-gradient(135deg, #ff6b6b, #f06595);
+    border-radius: 50%;
+    filter: blur(50px);
+    position: relative;
+}
+.blob::before {
+    content: '';
+    position: absolute;
+    right: 200px;
+    width: 400px;
+    height: 200px;
+    background: linear-gradient(135deg, #bdff21, #d475dd);
+    border-radius: 50%;
+    filter: blur(50px);
+}
+.blob::after {
+    content: '';
+    position: absolute;
+    left: 200px;
+    width: 400px;
+    height: 200px;
+    background: linear-gradient(135deg, #6b6bff, #65f0f0);
+    border-radius: 50%;
+    filter: blur(40px);
+}
+.animate-spin {
+    animation: spin 1slinear infinite;
+}
