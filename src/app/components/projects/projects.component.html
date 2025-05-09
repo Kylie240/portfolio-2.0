@@ -1,19 +1,32 @@
-<div id="projects" class="grid grid-nogutter w-full" style="padding-top: 120px; height: 100vh;">
+<div id="projects" class="grid grid-nogutter w-full" style="padding-top: 120px; min-height: 100vh;">
     <div class="w-full h-full flex justify-content-center align-items-center">
         <div class="flex justify-content-center align-items-end" style="max-width: 1600px;">
             <div>
                 <p class="text-lg text-center line-height-3">My portfolio</p>
-                <div class="text-7xl line-height-1 text-center">Check out my work</div>
-                <p class="text-lg text-center line-height-3">Explor a collection of some of my most recent projects, showcasing my expertise in front-end and knowledge of backend</p>
-                <div class="grid">
+                <div class="text-5xl line-height-1 text-center">Check out my work</div>
+                <!-- <p class="text-lg text-center line-height-3">Explor a collection of some of my most recent projects, showcasing my expertise in front-end and knowledge of backend</p> -->
+                <div class="w-full align-items-center justify-content-center mt-6 gap-6 {{isSmallScreen ? 'flex flex-column' : 'grid'}}">
                     @for (project of projects; track $index) {
-                        <p-card class="col-3" [style]="{ width: '25rem', overflow: 'hidden' }">
-                            <ng-template #header>
-                                <img alt="{{project.title}}" class="w-full" style="height: 200px;" src="{{project.image}}" />
-                            </ng-template>
-                            <ng-template #title> {{project.title}} </ng-template>
-                            <ng-template #subtitle> {{project.stack}} </ng-template>
-                        </p-card>
+                        <div style="width: 600px; height: 735px;" class="{{isSmallScreen ? '' : 'col-6'}} flex flex-column justify-content-between p-4 border-1 border-gray-400 border-round-3xl">
+                            <div>
+                                <img alt="{{project.title}}" style="height: 400px; object-fit: cover; object-position: top;" class="w-full shadow-2" src="{{project.image}}" />
+                                <p class="text-2xl font-semibold py-2">{{project.title}}</p>
+                                <p class="text-lg">{{project.description}}</p>
+                            </div>
+                            <div>
+                                <div class="flex flex-wrap gap-2 pt-3">
+                                    @for (item of project.stack; track $index) {
+                                        <div class="bg-black-alpha-80 text-white border-round">
+                                            <p class="text-lg p-2">{{item}}</p>
+                                        </div>
+                                    }
+                                </div>
+                                <div class="flex w-full justify-content-between">
+                                    <p-button (onClick)="handleLink(project.code)" [style]="{'height': '50px'}" styleClass="mt-4" class="pl-1" [rounded]="true" label="source code" variant="outlined" severity="contrast" />
+                                    <p-button (onClick)="handleLink(project.link)" [style]="{'height': '50px'}" styleClass="mt-4" class="pl-1" [rounded]="true" label="live demo" variant="outlined" severity="contrast" />
+                                </div>
+                            </div>
+                        </div>
                     }
                 </div>
             </div>

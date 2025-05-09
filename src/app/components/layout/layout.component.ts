@@ -9,19 +9,23 @@ import { FooterComponent } from "../footer/footer.component";
 
 @Component({
   selector: 'app-layout',
-  imports: [HeaderComponent, AboutComponent, ProjectsComponent, NavbarComponent, ExperienceComponent, ContactComponent, FooterComponent],
+  imports: [
+    HeaderComponent, 
+    AboutComponent, 
+    ProjectsComponent, 
+    NavbarComponent, 
+    ExperienceComponent, 
+    ContactComponent, 
+    FooterComponent
+  ],
   template: `
-  <div class="grid-nogutter h-full w-full">
     <app-navbar />
-    <div>
-      <app-header />
-      <app-about />
-      <app-experience />
-      <app-projects />
-      <app-contact />
-      <app-footer />
-    </div>
-  </div>
+    <app-header />
+    <app-about />
+    <app-experience />
+    <app-projects />
+    <app-contact />
+    <app-footer />
   `,
   styleUrl: './layout.component.scss'
 })

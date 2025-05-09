@@ -1,20 +1,28 @@
 <div class="navbar fixed grid w-full z-5" style="height: 80px;">
     <div class="col-12 flex align-items-center">
-        <div class="flex w-full justify-content-around align-items-center">
-            <div class="flex font-bold text-5xl" style="width: 150px;">
+        <div class="flex w-full align-items-center {{isTablet ? 'justify-content-between px-8' : 'justify-content-around'}}">
+            <div class="flex font-bold text-gray-800 {{isTablet ? 'text-4xl' : 'text-5xl'}}" style="width: 150px;">
                 Kylie.
             </div>
-            <div class="z-5 bg-white border-round-3xl flex justify-content-center align-items-center" style="box-shadow: 1px 1px 2px lightgrey; opacity: .8;">
-                <div class="flex align-items-center py-1 px-4 gap-2">
-                    <p-button class="nav-btn" label="Home" text plain />
-                    <p-button class="nav-btn" label="About Me" text plain />
-                    <p-button class="nav-btn" label="Projects" text plain />
-                    <p-button class="nav-btn" label="Contact" text plain />
+            @if(!isTablet){
+                <div class="z-5 bg-white border-round-3xl flex justify-content-center align-items-center" style="box-shadow: 1px 1px 2px lightgrey; opacity: .8;">
+                    <div class="flex align-items-center py-1 px-4 gap-2">
+                        <p-button class="nav-btn" label="Home" text plain />
+                        <p-button class="nav-btn" label="About Me" text plain />
+                        <p-button class="nav-btn" label="Projects" text plain />
+                    </div>
                 </div>
-            </div>
-            <div class="flex gap-3" style="width: 150px;">
-                <p-button icon="fa-solid fa-gear" [rounded]="true" [text]="true" severity="secondary" (click)="op.toggle($event)"/>
-                <p-button class="nav-btn" styleClass="bg-white px-3" [rounded]="true" [text]="true" label="Contact" [raised]="true" severity="secondary" />
+            }
+            <div class="flex gap-3 justify-content-end" style="width: 150px; z-index: 200;">
+                <p-button icon="fa-solid fa-gear text-2xl text-gray-800" [rounded]="true" [text]="true" severity="secondary" (click)="op.toggle($event)"/>
+                @if(isTablet){
+                    <div>
+                        <p-button class="nav-btn" (click)="menu.toggle($event)" styleClass="bg-white px-3" [text]="true" icon="fa-solid fa-bars" [raised]="true" severity="secondary" />
+                        <p-menu #menu [model]="items" [popup]="true" />
+                    </div>
+                }
+
+                <!-- small screen menu -->
                 <!-- <div class="w-20 h-20 animate-spin" style="animation-duration: 2s; background: conic-gradient(from 90deg, #f97316, #f59e0b, #eab308, #84cc16, #22c55e, #10b981, #14b8a6, #06b6d4, #0ea5e9, #3b82f6, #6366f1, #8b5cf6, #a855f7, #d946ef, #ec4899, #f43f5e);"></div> -->
             </div>
         </div>

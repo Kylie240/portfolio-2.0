@@ -3,7 +3,24 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-footer',
   imports: [],
-  templateUrl: './footer.component.html',
+  template: `
+    <div class="grid grid-nogutter w-full flex flex-column align-content-center" style="height: 160px;">
+      <div class="flex flex-column align-items-center">
+          <span class="font-bold text-5xl"> Kylie. </span>
+          <p>olivkyliegmail.com</p>
+      </div>
+      <div style="border-top: 2px solid lightgrey; width: 85%;">
+        <div class="w-full flex justify-content-between align-items-center" >
+          <p>2025 Kylie Oliver. All rights reserved.</p>
+          <div class="flex gap-4">
+            <a target="_blank" href="https://github.com/Kylie240">GitHub</a>
+            <a target="_blank" href="https://linkedin.com/in/kylie-oliver">LinkedIn</a>
+            <a target="_blank" href="">Twitter</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  `,
   styleUrl: './footer.component.scss'
 })
 export class FooterComponent {
