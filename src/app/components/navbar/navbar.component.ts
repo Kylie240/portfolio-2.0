@@ -11,7 +11,8 @@ import { ToggleSwitchModule } from 'primeng/toggleswitch';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { Menu } from 'primeng/menu';
 import { DialogModule } from 'primeng/dialog';
-import { MenuItem } from 'primeng/api';
+import { SettingsService } from '../../services/settings.service';
+import SettingsDto from '../../dtos/settingsDto';
 
 @Component({
   selector: 'app-navbar',
@@ -32,64 +33,60 @@ import { MenuItem } from 'primeng/api';
   styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent implements OnInit {
-  name: string = '';
-  email: string = '';
-  theme: string = '';
+  settings: SettingsDto = new SettingsDto();
   checked: boolean = false;
   isTablet: boolean = false;
   visible: boolean = false;
   items = [
     {
-        label: 'Quick Menu',
         items: [
             {
               label: 'Home',
-              icon: 'fa-solid fa-house',
+              // icon: 'fa-solid fa-house',
               command: () => {
                 document.getElementById('header')?.scrollIntoView({ behavior: 'smooth' });
               }
             },
             {
               label: 'About',
-              icon: 'fa-solid fa-avatar',
+              // icon: 'fa-solid fa-avatar',
               command: () => {
                 document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
               }
             },
             {
               label: 'Experience',
-              icon: 'fa-solid fa-tool',
+              // icon: 'fa-solid fa-tool',
               command: () => {
                 document.getElementById('experience')?.scrollIntoView({ behavior: 'smooth' });
               }
             },
             {
               label: 'Projects',
-              icon: 'fa-solid fa-star',
+              // icon: 'fa-solid fa-star',
               command: () => {
                 document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
               }
             },
-            {
-              label: 'Contact',
-              icon: 'fa-solid fa-phone',
-              command: () => {
-                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-              }
-            }
+            // {
+            //   label: 'Contact',
+            //   // icon: 'fa-solid fa-phone',
+            //   command: () => {
+            //     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+            //   }
+            // }
         ]
     },
     {
-      label: 'Socials',
       items: [
           {
               label: 'LinkedIn',
-              icon: 'fa-brands fa-linkedin',
+              // icon: 'fa-brands fa-linkedin',
               url: 'https://linkedin.com/in/kylie-oliver'
           },
           {
               label: 'Github',
-              icon: 'fa-brands fa-github',
+              // icon: 'fa-brands fa-github',
               url: 'https://linkedin.com/in/kylie-oliver'
           },
       ]
@@ -98,13 +95,14 @@ export class NavbarComponent implements OnInit {
 
   constructor(
     private breakpointObserver: BreakpointObserver,
+    private settingsService: SettingsService,
   ) {
     const tabletBreakpoint = '(max-width: 1000px)';
     const standardBreakpoint = '(max-width: 1400px)';
 
     this.breakpointObserver.observe([tabletBreakpoint, standardBreakpoint]).subscribe(data => {
       this.isTablet = data.breakpoints[tabletBreakpoint];
-    })
+    });
   };
 
     ngOnInit(): void {
@@ -114,6 +112,10 @@ export class NavbarComponent implements OnInit {
     }
 
     handleSettingsChange() {
-      
+      this.settingsService.setData(this.settings);
+    }
+
+    handleScroll(ref: string) {
+      document.getElementById(ref)?.scrollIntoView();
     }
   }

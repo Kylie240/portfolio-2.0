@@ -7,9 +7,9 @@
             @if(!isTablet){
                 <div class="z-5 bg-white border-round-3xl flex justify-content-center align-items-center" style="box-shadow: 1px 1px 2px lightgrey; opacity: .8;">
                     <div class="flex align-items-center py-1 px-4 gap-2">
-                        <p-button class="nav-btn" label="Home" text plain />
-                        <p-button class="nav-btn" label="About Me" text plain />
-                        <p-button class="nav-btn" label="Projects" text plain />
+                        <p-button class="nav-btn" label="Home" text plain (onClick)="handleScroll('header')"/>
+                        <p-button class="nav-btn" label="About Me" text plain (onClick)="handleScroll('about')"/>
+                        <p-button class="nav-btn" label="Projects" text plain (onClick)="handleScroll('projects')"/>
                     </div>
                 </div>
             }
@@ -18,7 +18,7 @@
                 @if(isTablet){
                     <div>
                         <p-button class="nav-btn" (click)="menu.toggle($event)" styleClass="bg-white px-3" [text]="true" icon="fa-solid fa-bars" [raised]="true" severity="secondary" />
-                        <p-menu #menu [model]="items" [popup]="true" />
+                        <p-menu #menu [model]="items" appendTo="body" [popup]="true" />
                     </div>
                 }
 
@@ -34,28 +34,27 @@
     <!-- Settings panel -->
     <p-popover #op>
         <div class="flex flex-column align-items-center">
-            <div class="pb-4 pt-2 text-xl">Site Settings</div>
-            <div>
-                <div class="pb-3">
-                    <p-iconfield>
-                        <p-inputicon>
-                            <i class="fa-solid fa-user"></i>
-                        </p-inputicon>
-                        <input type="text" pInputText id="input" [(ngModel)]="name" type="text" placeholder="First Name" [fluid]="true" />
-                    </p-iconfield>
-                </div>
+            <div class="pb-1 pt-2 text-xl">Site Settings</div>
+            <p class="mb-2">Customize your viewing experience</p>
+            <div class="flex flex-column gap-2 mt-2">
+                <p-iconfield>
+                    <p-inputicon>
+                        <i class="fa-solid fa-user"></i>
+                    </p-inputicon>
+                    <input type="text" pInputText id="input" [(ngModel)]="settings.name" type="text" placeholder="First Name" [fluid]="true" />
+                </p-iconfield>
                 <p-iconfield>
                     <p-inputicon>
                         <i class="fa-solid fa-building"></i>
                     </p-inputicon>
-                    <input type="text" pInputText id="input" [(ngModel)]="name" type="text" placeholder="Company Name" [fluid]="true" />
+                    <input type="text" pInputText id="input" [(ngModel)]="settings.company" type="text" placeholder="Company Name" [fluid]="true" />
                 </p-iconfield>
-                <div class="flex align-items-center gap-2">
+                <!-- <div class="flex align-items-center gap-2">
                     <p>Theme toggele:</p>
-                    <p-toggleswitch [(ngModel)]="checked" />
-                </div>
+                    <p-toggleswitch [(ngModel)]="settings.themeToggle" />
+                </div> -->
+                <p-button type="submit" severity="primary" label="Apply changes" class="w-full" styleClass="w-full mt-2" (click)="op.toggle($event); handleSettingsChange()"/>
             </div>
-            <p-button type="submit" severity="primary" label="Apply changes" class="mt-2 w-full" styleClass="w-full" (click)="op.toggle($event); handleSettingsChange()"/>
         </div>
     </p-popover>
 </div>

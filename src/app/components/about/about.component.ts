@@ -36,7 +36,7 @@ export class AboutComponent {
       icon: 'src/app/assets/icons/javascript-react.svg'
     },
     {
-      name: 'Prime Ng',
+      name: 'PrimeNG',
       icon: 'src/app/assets/icons/javascript-angular.svg'
     },
     {
@@ -94,6 +94,7 @@ export class AboutComponent {
       icon: 'src/app/assets/icons/.net.png'
     },
   ]
+  image = 'src/app/assets/icons/typescript-icon.svg'
   color: string[] = [
     '#ff6b6b',
     'f06595',

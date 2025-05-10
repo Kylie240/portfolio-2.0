@@ -46,15 +46,15 @@ export class ProjectsComponent {
       code: 'https://github.com/Kylie240/word-search',
       link: 'https://oliver-word-search.netlify.app/',
     },
-    {
-      title: 'Smoothie Queen',
-      image: 'https://kylieoliver.com/smoothie-queen.png',
-      stack: ['HTML', 'CSS', 'Tailwind', 'Javascript', 'React', 'express', 'Node JS', 'Mongo DB'],
-      description: 'Find, save, and create you favorite smoothie recipes. Features the ability to create an account, edit saved recipes, and create a shopping list of based off of listed ingredients.',
-      credentials: 'For quick login use email: "test@gmail.com" & password: "test"',
-      code: 'https://github.com/Kylie240/recipe-app',
-      link: 'https://oliver-smoothie-queen.netlify.app/',
-    },
+    // {
+    //   title: 'Smoothie Queen',
+    //   image: 'https://kylieoliver.com/smoothie-queen.png',
+    //   stack: ['HTML', 'CSS', 'Tailwind', 'Javascript', 'React', 'express', 'Node JS', 'Mongo DB'],
+    //   description: 'Find, save, and create you favorite smoothie recipes. Features the ability to create an account, edit saved recipes, and create a shopping list of based off of listed ingredients.',
+    //   credentials: 'For quick login use email: "test@gmail.com" & password: "test"',
+    //   code: 'https://github.com/Kylie240/recipe-app',
+    //   link: 'https://oliver-smoothie-queen.netlify.app/',
+    // },
   ]
 
   handleLink(link: string) {

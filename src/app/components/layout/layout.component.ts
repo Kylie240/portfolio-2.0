@@ -24,7 +24,7 @@ import { FooterComponent } from "../footer/footer.component";
     <app-about />
     <app-experience />
     <app-projects />
-    <app-contact />
+    <!-- <app-contact /> -->
     <app-footer />
   `,
   styleUrl: './layout.component.scss'

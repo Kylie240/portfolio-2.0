@@ -1,24 +1,24 @@
-<div id="about" class="grid grid-nogutter w-full px-6" style="padding-top: 80px; height: 100vh;">
+<div id="about" class="grid grid-nogutter w-full px-6" style="height: 100vh;">
     <div class="w-full h-full flex justify-content-center align-items-center">
         <div class="flex justify-content-center align-items-end" style="max-width: 1400px;">
             <div>
                 <div class="flex flex-column justify-content-center align-items-center">
                     <p class="text-lg text-center line-height-3">Introduction</p>
-                    <div class="text-7xl line-height-1 text-center pb-6">About Me</div>
+                    <div class="text-7xl line-height-1 text-center pb-4">About Me</div>
                 </div>
                 <div class="flex flex-column align-items-center">
                     <div class="flex flex-column align-items-center" style="max-width: 800px;">
                         <p class="text-lg text-center line-height-4">Self-taught full stack developer with a passion for building dynamic web applications and solving real-world problems through code. Currently working in web development at a cybersecurity company, blending technical versatility with a strong focus on secure, scalable solutions.</p>
-                        <p class="text-2xl w-full text-left line-height-3 mt-5 mb-3">Tech Stack</p>
+                        <p class="text-2xl w-full text-left line-height-3 mt-5 mb-3 font-semibold">Tech Stack</p>
                         <div class="flex gap-3 w-full flex-wrap">
                             @for (item of techStack; track $index) {
-                                <div class="border-2 border-gray-400 border-round flex flex-column justify-content-center align-items-center cursor-pointer hover:bg-blue-50 hover:shadow-1" style="height: 100px; width: 100px;">
-                                    <img src="app/assets/icons/c#.png" alt="{{item}} icon">
+                                <div class="border-2 border-gray-400 border-round flex flex-column justify-content-center align-items-center cursor-pointer hover:bg-blue-50 hover:shadow-1" style="height: 50px; width: 100px;">
+                                    <!-- <img src="{{image}}" alt="{{item}} icon"> -->
                                     <p class="font-semibold">{{item.name}}</p>
                                 </div>
                             }
                         </div>
-                        <p class="text-2xl w-full text-left line-height-3 mt-5 mb-3">Tools</p>
+                        <p class="text-2xl w-full text-left line-height-3 mt-5 mb-3 font-semibold">Tools</p>
                         <div class="flex gap-3 w-full flex-wrap">
                             @for (item of tools; let i = $index; track $index) {
                                 <div class="border-2 border-gray-400 border-round flex flex-column justify-content-center align-items-center cursor-pointer hover:bg-blue-50 hover:shadow-1" style="height: 50px; width: 100px;">

@@ -7,10 +7,10 @@ import { Component } from '@angular/core';
   <div id="experience" class="grid grid-nogutter w-full justify-content-center" style="padding-top: 80px; height: fit-content;">
     <div class="flex flex-column align-items-start gap-3 mx-8"  style="max-width: 800px;">
         <p class="text-3xl text-center font-bold line-height-3">Work Experience</p>
-        <div class="flex flex-column gap-3">
+        <div class="flex flex-column gap-6">
           @for (item of experiences; track $index) {
             <div class="flex justify-content-center align-items-start gap-4">
-              <p>{{item.date}}</p>
+              <p style="min-width: fit-content;">{{item.date}}</p>
               <div class="flex flex-column justify-content-start align-items-start gap-2">
                   <p class="font-bold text-xl p-0">{{item.title}}</p>
                   @if(item?.link){
