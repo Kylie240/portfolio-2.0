@@ -11,7 +11,7 @@ import { Component } from '@angular/core';
           <div class="flex gap-4">
             <a target="_blank" href="https://github.com/Kylie240">GitHub</a>
             <a target="_blank" href="https://linkedin.com/in/kylie-oliver">LinkedIn</a>
-            <a target="_blank" href="">Twitter</a>
+            <!-- <a target="_blank" href="">Twitter</a> -->
           </div>
         </div>
       </div>

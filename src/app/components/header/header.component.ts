@@ -10,18 +10,18 @@ import SettingsDto from '../../dtos/settingsDto';
   template: `
     <div id="header" class="grid grid-nogutter w-full" style="padding-top: -80px; height: 100vh;">
       <div class="w-full h-full flex justify-content-center align-items-center">
-        <div class="flex flex-column justify-content-center align-items-center mx-8" style="max-width: 830px;">
+        <div class="flex flex-column justify-content-center align-items-center {{smallDevice ? 'mx-2' : 'mx-8'}}" style="max-width: 830px;">
           <div class="flex flex-column justify-content-center align-items-center">
             <img alt="Card" class="border-circle" [style]="{ width: '120px', height: '120px' }" src="https://media.licdn.com/dms/image/D4E03AQH1o4Avl01RCA/profile-displayphoto-shrink_800_800/0/1698873322772?e=2147483647&v=beta&t=bU_iaAUxnhokAcSmCwTi-LFF1MTZ12S4OruFTeeneoQ" />
             @if(settings.name) {
-              <div class="text-2xl font-light py-3">Hello {{settings.name}}, My name is Kylie</div>
+              <div class="text-2xl text-center font-light py-3">Hello {{settings.name}}, My name is Kylie</div>
             } @else {
               <div class="text-2xl font-light py-3">Hello! My name is Kylie</div>
             }
             @if(settings.company) {
               <div class="line-height-1 text-center pb-2 {{isTablet ? 'text-7xl' : 'text-8xl'}}">{{settings.company}}'s next developer.</div>
             } @else {
-              <div class="line-height-1 text-center pb-2 {{isTablet ? 'text-7xl' : 'text-8xl'}}">Full Stack developer based in Orlando.</div>
+              <div class="line-height-1 text-center pb-2 {{smallDevice ? 'text-4xl' : isTablet ? 'text-7xl' : 'text-8xl'}}">Full Stack developer based in Orlando.</div>
             }
             <p class="text-lg text-center line-height-3 mx-4 text-gray-800">I am a full stack developer with a specialty in front end angular development. Currently, I am expanding my skillset working at one of the world's leading Cybersecurity platforms.</p>
           </div>
@@ -37,6 +37,7 @@ import SettingsDto from '../../dtos/settingsDto';
 })
 export class HeaderComponent {
   isTablet: boolean = false;
+  smallDevice: boolean = false;
   settings: SettingsDto = new SettingsDto();
 
   constructor(
@@ -45,9 +46,11 @@ export class HeaderComponent {
   ){
     const tabletBreakpoint = '(max-width: 1200px)';
     const standardBreakpoint = '(max-width: 1400px)';
+    const smallDevice = '(max-width: 600px)';
 
-    this.breakpointObserver.observe([tabletBreakpoint, standardBreakpoint]).subscribe(data => {
+    this.breakpointObserver.observe([tabletBreakpoint, standardBreakpoint, smallDevice]).subscribe(data => {
       this.isTablet = data.breakpoints[tabletBreakpoint];
+      this.smallDevice = data.breakpoints[smallDevice];
     });
 
     this.settingsService.data$.subscribe(data => {
