@@ -43,21 +43,21 @@ export class ExperienceComponent {
       title: 'Junior Front End Developer',
       company: 'ThreatLocker',
       link: 'https://www.threatlocker.com/',
-      description: 'For the past year I have been gaining invaluable experience, working closely alongside backend developers and business analysts to maintain and improve the company`s enterprise level software. My role has involved producing new features for ThreatLocker`s web based portal, solving both internal and client related UI and backend bug issues, and providing documentation and insight for front end practices.'
+      description: 'For the past two years I have been gaining invaluable experience, working closely alongside experienced developers and business analysts to maintain and improve the company`s enterprise level software. My role has involved producing new features for ThreatLocker`s web based portal, solving both internal and client related UI and backend bug issues, and providing documentation and insight for front end practices. In this role I have gone from front end to full stack work with C#, .Net, and Angular, and plan to continue growing my skillset.'
     },
     {
       date: '09/2023 - 11/2023',
       title: 'Front End Developer Volunteer',
       company: 'Greenstand',
       link: 'https://greenstand.org/',
-      description: 'For the past two years, I have primarily worked with startups, developing products from the ground up. I have led the frontend development of an AI-powered Interview Platform, building a job marketplace for dentists, and creating a system for managing promotional prize games.'
+      description: 'As a Front End Developer Volunteer, I contributed to building and improving responsive, user-friendly web interfaces using modern technologies. I collaborated with designers and backend developers to implement features, optimize performance, and ensure cross-browser compatibility. Through this experience, I strengthened my skills in front-end architecture, accessibility, and version control while supporting a mission-driven organization.'
     },
     {
       date: '02/2020 - 03/2024',
       title: 'Webmaster',
       company: 'Claw Collective',
       link: '',
-      description: 'For the past two years, I have primarily worked with startups, developing products from the ground up. I have led the frontend development of an AI-powered Interview Platform, building a job marketplace for dentists, and creating a system for managing promotional prize games.'
+      description: 'As the Webmaster for a small nail business, I managed the company’s online presence, including website design, maintenance, and performance optimization. I implemented SEO strategies to improve search visibility, updated content to reflect current promotions and services, and ensured a smooth, user-friendly experience for customers purchasing from the site. My role combined technical management with creative branding to help grow the business’s digital reach and customer engagement.'
     },
   ]
   isTablet: boolean = false;

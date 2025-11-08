@@ -74,6 +74,10 @@ export class AboutComponent {
       icon: 'src/app/assets/icons/javascript-react.svg'
     },
     {
+      name: 'NextJS',
+      icon: 'src/app/assets/icons/javascript-react.svg'
+    },
+    {
       name: 'Angular',
       icon: 'src/app/assets/icons/javascript-angular.svg'
     },
