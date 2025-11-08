@@ -23,7 +23,7 @@ export class ProjectsComponent {
   projects = [
     {
       title: 'Journli',
-      image: 'journli.png',
+      image: 'https://kylie240.github.io/portfolio-2.0/journli.png',
       stack: ['HTML', 'CSS', 'Tailwind', 'React', 'NextJS', 'postgresql'],
       description: 'Journli is a live website created for sharing travel itineraries. As a fully functioning website, I utilize both SSR and CSR along with a postgress database to run this project.',
       code: 'https://github.com/Kylie240/travel-next.js',
