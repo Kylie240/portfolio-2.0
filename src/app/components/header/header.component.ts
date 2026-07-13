@@ -12,7 +12,7 @@ import SettingsDto from '../../dtos/settingsDto';
       <div class="w-full h-full flex justify-content-center align-items-center">
         <div class="flex flex-column justify-content-center align-items-center {{smallDevice ? 'mx-2' : 'mx-8'}}" style="max-width: 830px;">
           <div class="flex flex-column justify-content-center align-items-center">
-            <img alt="Card" class="border-circle" [style]="{ width: '120px', height: '120px' }" src="https://media.licdn.com/dms/image/v2/D4E03AQH1o4Avl01RCA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1698873322772?e=1776297600&v=beta&t=YC_OnwiVp5eQsrUHu93Rnw6Q0MXksiJYFWJOc5cEN7s" />
+            <img alt="Card" class="border-circle" [style]="{ width: '120px', height: '120px' }" src="https://media.licdn.com/dms/image/v2/D4E03AQH1o4Avl01RCA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1698873322772?e=1785369600&v=beta&t=kTorn7T2I1g5fsWZDyQ8vG7LvfSkWXFiHK3ntdhLebw" />
             @if(settings.name) {
               <div class="text-2xl text-center font-light py-3">Hello {{settings.name}}, My name is Kylie</div>
             } @else {
