@@ -12,7 +12,7 @@ import SettingsDto from '../../dtos/settingsDto';
       <div class="w-full h-full flex justify-content-center align-items-center">
         <div class="flex flex-column justify-content-center align-items-center {{smallDevice ? 'mx-2' : 'mx-8'}}" style="max-width: 830px;">
           <div class="flex flex-column justify-content-center align-items-center">
-            <img alt="Card" class="border-circle" [style]="{ width: '120px', height: '120px' }" src="/d1fac147000d40538a7d95fb77a347f2.jpg" />
+            <img alt="Card" class="border-circle" [style]="{ width: '120px', height: '120px' }" src="https://github.com/Kylie240/portfolio-2.0/blob/main/d1fac147000d40538a7d95fb77a347f2.jpg?raw=true" />
             @if(settings.name) {
               <div class="text-2xl text-center font-light py-3">Hello {{settings.name}}, My name is Kylie</div>
             } @else {
